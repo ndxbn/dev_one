@@ -66,7 +66,7 @@ int register_device(void) {
 
     // Create sysfs information:
     printk( KERN_NOTICE "One: Creating Device class\n" );
-    if ((cl = class_create(THIS_MODULE, "chardrv")) == NULL) {
+    if ((cl = class_create("chardrv")) == NULL) {
         printk( KERN_ALERT "One: Device class creation failed\n" );
         unregister_chrdev_region(first, 1);
         return -1;
